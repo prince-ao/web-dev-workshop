@@ -12,7 +12,7 @@
   let counter = 0;
 
   const updateCounter = async () => {
-    const {data} = await get(`http://localhost:8080/add?current=${counter}`);
+    const {data} = await get(`/add?current=${counter}`);
     counter = Number(data);
     window.localStorage.setItem("counter", data);
   }
