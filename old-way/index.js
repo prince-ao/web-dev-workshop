@@ -30,4 +30,9 @@ app.get("/contact", (request, response) => {
   response.sendFile(__dirname + "/html/contact.html");
 });
 
+app.get("/add", (request, response) => {
+  const { counter } = request.query;
+  response.status(200).send(`${Number(counter) + 1}`);
+});
+
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
